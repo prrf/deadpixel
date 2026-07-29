@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c8yrvh7ppa418"]
+
+[ext_resource type="Script" uid="uid://cfqj1ptwvf1fw" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://ct8fko5mmwcee" path="res://pixel.tscn" id="2_0xm2m"]
+
+[node name="Node2D" type="Node2D" unique_id=1098249185]
+script = ExtResource("1_ig7tw")
+pixelscene = ExtResource("2_0xm2m")
+
+[node name="Timer" type="Timer" parent="." unique_id=1102135073]
+wait_time = 300.0
+autostart = true
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=823645324]
+polygon = PackedVector2Array(0, 0, 0, -1, -1, -1, -1, 0)
+uv = PackedVector2Array(-233, -15)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
